@@ -1,24 +1,14 @@
-from fastapi import FastAPI, Depends
-from sqlalchemy.orm import Session
-from . import models, schemas, database
+from fastapi import FastAPI
+from app.routers import appointments, users, auth, shifts, worker, service
+from app.database import Base, engine
+
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-models.Base.metadata.create_all(bind=database.engine)
-
-
-def get_db():
-    db = database.SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
-
-
-@app.post("/appointments", response_model=schemas.Appointment)
-def create_appointment(appointment: schemas.AppointmentCreate, db: Session = Depends(get_db)):
-    db_appointment = models.Appointment(**appointment.dict())
-    db.add(db_appointment)
-    db.commit()
-    db.refresh(db_appointment)
-    return db_appointment
+app.include_router(auth.router)
+app.include_router(users.router)
+app.include_router(appointments.router)
+app.include_router(shifts.router)
+app.include_router(worker.router)
+app.include_router(service.router)
