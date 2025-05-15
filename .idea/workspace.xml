@@ -5,53 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4b66728-f533-4cac-9890-08795fa72245" name="Changes" comment="added routes as for v1 of the backend , created tests for the route added connection to the sql-db , added comments and added test.yml file for dynamic test . this is the v1 stable version were all tests have passed in the test env">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/test.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/crud/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/crud/appointments.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/crud/auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/crud/service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/crud/shifts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/crud/user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/crud/worker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/shift.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/verufy_code.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/worker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/appointments.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/shifts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/users.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/worker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/schemas/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/schemas/auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/schemas/service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/schemas/shift.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/schemas/user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/schemas/worker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/utils/jwt_auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/utils/sms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_appointmetns.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_services.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_shifts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_users.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_worker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/test.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/appointment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/appointment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/render.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/render.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +165,7 @@
       <workItem from="1746966926183" duration="3104000" />
       <workItem from="1746972377093" duration="204000" />
       <workItem from="1746972593730" duration="404000" />
-      <workItem from="1747150368724" duration="15626000" />
+      <workItem from="1747150368724" duration="17539000" />
     </task>
     <task id="LOCAL‎-00001" summary="start-project">
       <option name="closed" value="true" />
@@ -236,7 +191,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1747324664274</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL‎-00004" summary="added routes as for v1 of the backend , created tests for the route added connection to the sql-db , added comments and added test.yml file for dynamic test . this is the v1 stable version were all tests have passed in the test env">
+      <option name="closed" value="true" />
+      <created>1747325119222</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL‎-00004" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1747325119222</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
