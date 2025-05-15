@@ -39,10 +39,6 @@ app.dependency_overrides[get_db] = override_get_db
 
 
 # Test client fixture
-@pytest.fixture(scope="module")
-def client():
-    with TestClient(app) as c:
-        yield c
 
 
 # Fixture to create and drop the database for each test module
@@ -58,6 +54,12 @@ def db_session():
     # Drop the tables after the tests run
     db.close()
     Base.metadata.drop_all(bind=engine)
+
+
+@pytest.fixture(scope="module")
+def client(db_session):
+    with TestClient(app) as c:
+        yield c
 
 
 @pytest.fixture
