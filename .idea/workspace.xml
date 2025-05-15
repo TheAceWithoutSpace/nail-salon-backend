@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4b66728-f533-4cac-9890-08795fa72245" name="Changes" comment="added routes as for v1 of the backend , created tests for the route added connection to the sql-db , added comments and added test.yml file for dynamic test . this is the v1 stable version were all tests have passed in the test env">
+    <list default="true" id="f4b66728-f533-4cac-9890-08795fa72245" name="Changes" comment="fixed action to run from master">
       <change beforePath="$PROJECT_DIR$/.github/workflows/test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/test.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -165,7 +165,7 @@
       <workItem from="1746966926183" duration="3104000" />
       <workItem from="1746972377093" duration="204000" />
       <workItem from="1746972593730" duration="404000" />
-      <workItem from="1747150368724" duration="17539000" />
+      <workItem from="1747150368724" duration="17812000" />
     </task>
     <task id="LOCAL‎-00001" summary="start-project">
       <option name="closed" value="true" />
@@ -199,7 +199,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1747325119222</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL‎-00005" summary="fixed action to run from master">
+      <option name="closed" value="true" />
+      <created>1747326648762</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL‎-00005" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1747326648762</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,7 +227,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start-project" />
     <MESSAGE value="added routes as for v1 of the backend , created tests for the route added connection to the sql-db , added comments and added test.yml file for dynamic test . this is the v1 stable version were all tests have passed in the test env" />
-    <option name="LAST_COMMIT_MESSAGE" value="added routes as for v1 of the backend , created tests for the route added connection to the sql-db , added comments and added test.yml file for dynamic test . this is the v1 stable version were all tests have passed in the test env" />
+    <MESSAGE value="fixed action to run from master" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed action to run from master" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/nail_salon$auth.coverage" NAME="auth Coverage Results" MODIFIED="1747024688390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/routers" />
