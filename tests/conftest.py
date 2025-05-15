@@ -12,14 +12,20 @@ from app.database import Base, get_db
 from dotenv import load_dotenv
 from app.models import Worker, Appointment, User
 from app.schemas import UserCreate
-from app.crud import user as crud_users
+from sqlalchemy.pool import StaticPool
 
 load_dotenv()
 
 # Use a test-specific database URL (can be SQLite in-memory or separate test DB)
 SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_TEST_URL", "sqlite:///:memory:")  # Default to in-memory SQLite
-engine = create_engine(SQLALCHEMY_DATABASE_URL,
-                       connect_args={"check_same_thread": False} if "sqlite" in SQLALCHEMY_DATABASE_URL else {})
+if "sqlite" in SQLALCHEMY_DATABASE_URL:
+    engine = create_engine(
+        SQLALCHEMY_DATABASE_URL,
+        connect_args={"check_same_thread": False},
+        poolclass=StaticPool,
+    )
+else:
+    engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
 # SessionLocal for the test environment
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
@@ -145,14 +151,15 @@ def cleanup_database(db_session):
         db_session.query(Appointment).delete()
     except Exception as e:
         print(f"Skipping Appointment cleanup: {e}")
-    try:
-        db_session.query(Worker).delete()
-    except Exception as e:
-        print(f"Skipping Worker cleanup: {e}")
 
     try:
         db_session.query(User).delete()
     except Exception as e:
         print(f"Skipping User cleanup: {e}")
+
+    try:
+        db_session.query(Worker).delete()
+    except Exception as e:
+        print(f"Skipping Worker cleanup: {e}")
 
     db_session.commit()
