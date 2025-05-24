@@ -28,6 +28,9 @@ jobs:
     env:
       DATABASE_URL: ${{ secrets.DATABASE_TEST_URL }}
       SECRET_KEY: "secretAuthKey"
+      ACCESS_TOKEN: "WhatsUpAccsessToken"
+      PHONE_NUMBER_ID: "687245141133052"
+      ALGORITHM: "HS256"
 
     steps:
       - name: Checkout code
