@@ -5,6 +5,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app import crud, schemas
 from app.database import get_db
+from app.utils.jwt_auth import create_jwt_token
 
 router = APIRouter(prefix="/auth", tags=["Auth"])
 
@@ -22,7 +23,5 @@ def verify_login_code(request: schemas.VerifyLoginCodeRequest, db: Session = Dep
         raise HTTPException(status_code=401, detail="Invalid or expired code")
 
     # Create JWT token for the authenticated user
-    token = jwt.encode({"user_id": user.id, "exp": datetime.utcnow() + timedelta(hours=24)},
-                       "your-secret-key", algorithm="HS256")  # Replace with your secret key
-
+    token = create_jwt_token(user)
     return {"access_token": token, "token_type": "bearer"}

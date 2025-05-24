@@ -1,3 +1,5 @@
+from typing import List
+
 from sqlalchemy.orm import Session
 from sqlalchemy import or_
 from app import models, schemas
@@ -30,6 +32,11 @@ def get_appointments_by_date(db: Session, appointment_date: date):
 # Get appointments by time
 def get_appointments_by_time(db: Session, appointment_time: time):
     return db.query(models.Appointment).filter(models.Appointment.time == appointment_time).all()
+
+
+def get_appointments_by_user(db: Session, user_id: int) -> List[Appointment]:
+    return db.query(Appointment).filter(Appointment.user_id == user_id).order_by(
+        Appointment.appointment_time.desc()).all()
 
 
 # Get appointments by service

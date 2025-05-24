@@ -7,6 +7,8 @@ from typing import List
 from app import schemas
 from app.database import get_db
 from app.crud import appointments as crud
+from app.schemas import AppointmentOut
+from app.utils.jwt_auth import get_current_user
 
 router = APIRouter(prefix="/appointments", tags=["Appointments"])
 
@@ -15,6 +17,17 @@ router = APIRouter(prefix="/appointments", tags=["Appointments"])
 @router.get("/", response_model=List[schemas.AppointmentOut])
 def get_appointments(db: Session = Depends(get_db)):
     return crud.get_appointments(db)
+
+
+# Get appointments by user
+@router.get("/user", response_model=List[AppointmentOut])
+def read_appointments_by_user(
+        db: Session = Depends(get_db),
+        user_id=Depends(get_current_user)):
+    appointments = crud.get_appointments_by_user(db, user_id)
+    if not appointments:
+        raise HTTPException(status_code=404, detail="No appointments found for this user")
+    return appointments
 
 
 # Get appointment by Id
