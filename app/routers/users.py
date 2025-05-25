@@ -9,8 +9,8 @@ router = APIRouter(prefix="/users", tags=["Users"])
 # Create a new user
 @router.post("/", response_model=schemas.UserOut)
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
-    response = crud.create_user(user, db)
     crud.send_login_code(user.phone_number, db)
+    response = crud.create_user(user, db)
     return response
 
 
