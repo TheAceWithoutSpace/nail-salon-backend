@@ -1,14 +1,16 @@
 from sqlalchemy.orm import Session
 from app.models import User
 from app.schemas import UserCreate, UserUpdate
+from app.utils.message_sender import format_israeli_number
 
 
 # Create a new user
 def create_user(user: UserCreate, db: Session) -> User:
+    phone_number = format_israeli_number(user.phone_number)
     db_user = User(
         first_name=user.first_name,
         last_name=user.last_name,
-        phone_number=user.phone_number,
+        phone_number=phone_number,
         email=user.email,
         birthdate=user.birthdate,
         user_type=user.user_type
