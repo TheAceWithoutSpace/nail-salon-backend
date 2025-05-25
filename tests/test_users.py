@@ -5,6 +5,7 @@ import pytest
 from fastapi.testclient import TestClient
 from app.main import app  # assuming your FastAPI app is in app.main
 from app import schemas
+from app.utils.message_sender import format_israeli_number
 
 client = TestClient(app)
 
@@ -12,7 +13,7 @@ client = TestClient(app)
 @pytest.fixture
 def user_data():
     email = f"johndoe_{uuid.uuid4().hex[:6]}@example.com"
-    phone_number = f"10000000{random.randint(100, 999)}"
+    phone_number = format_israeli_number(f"10000000{random.randint(100, 999)}")
     return {
         "first_name": "John",  # first_name field is required
         "last_name": "Doe",  # last_name field is required
