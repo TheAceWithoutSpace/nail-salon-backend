@@ -13,7 +13,7 @@ client = TestClient(app)
 @pytest.fixture
 def user_data():
     email = f"johndoe_{uuid.uuid4().hex[:6]}@example.com"
-    phone_number = format_israeli_number(f"10000000{random.randint(100, 999)}")
+    phone_number = f"10000000{random.randint(100, 999)}"
     return {
         "first_name": "John",  # first_name field is required
         "last_name": "Doe",  # last_name field is required
@@ -37,7 +37,7 @@ def test_create_user(client, user_data):
     assert "id" in response.json()  # Check that a user ID is returned in the response
     assert response.json()["first_name"] == user_data["first_name"]
     assert response.json()["last_name"] == user_data["last_name"]
-    assert response.json()["phone_number"] == user_data["phone_number"]
+    assert response.json()["phone_number"] == format_israeli_number(user_data["phone_number"])
     assert response.json()["email"] == user_data["email"]
     assert response.json()["birthdate"] == user_data["birthdate"]
 
