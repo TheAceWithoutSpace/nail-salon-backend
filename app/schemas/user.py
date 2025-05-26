@@ -26,7 +26,6 @@ class UserUpdate(BaseModel):
     phone_number: str | None = None
     email: EmailStr | None = None
     birthdate: date | None = None
-    user_type: UserType | None = None
 
 
 # Schema for user output (e.g., when sending data back to the client)

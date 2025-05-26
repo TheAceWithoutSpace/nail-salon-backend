@@ -1,7 +1,13 @@
+from typing import List, Type
+
 from sqlalchemy.orm import Session
 from app.models import User
-from app.schemas import UserCreate, UserUpdate
+from app.schemas import UserCreate, UserUpdate, UserOut
 from app.utils.message_sender import format_israeli_number
+
+
+def get_all_users(db: Session) -> list[User]:
+    return db.query(User).all()
 
 
 # Create a new user
@@ -28,7 +34,12 @@ def get_user_by_id(user_id: int, db: Session):
 
 # Get user by phone number
 def get_user_by_phone_number(phone_number: str, db: Session):
-    return db.query(User).filter(User.phone_number == phone_number).first()
+    return db.query(User).filter(User.phone_number == format_israeli_number(phone_number)).first()
+
+
+# Get users by type
+def get_users_by_type(user_type: str, db: Session) -> list[User]:
+    return db.query(User).filter(User.user_type == user_type).all()
 
 
 # Update user
@@ -51,3 +62,14 @@ def delete_user(user_id: int, db: Session):
         db.commit()
         return {"message": "User deleted"}
     return {"message": "User not found"}
+
+
+# Update user type
+def update_user_type(user_id: int, new_type: str, db: Session):
+    db_user = db.query(User).filter(User.id == user_id).first()
+    if db_user:
+        db_user.user_type = new_type
+        db.commit()
+        db.refresh(db_user)
+        return db_user
+    return None
