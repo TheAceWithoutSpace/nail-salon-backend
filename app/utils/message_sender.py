@@ -53,12 +53,15 @@ def send_whatsapp_opt_code(to, code):
 
 
 def format_israeli_number(local_number: str) -> str:
-    # Remove spaces, dashes, etc.
-    digits = ''.join(filter(str.isdigit, local_number))
+    # Remove non-digit characters, but preserve '+' if it starts the string
+    local_number = local_number.strip().replace(" ", "").replace("-", "")
 
-    # Remove leading zero if it exists
-    if digits.startswith("0"):
-        digits = digits[1:]
-
-    # Add country code for Israel
-    return f"+972{digits}"
+    if local_number.startswith("+972"):
+        return local_number
+    elif local_number.startswith("972"):
+        return f"+{local_number}"
+    elif local_number.startswith("0"):
+        return f"+972{local_number[1:]}"
+    else:
+        # If it's already in correct format (or malformed), just add prefix
+        return f"+972{local_number}"

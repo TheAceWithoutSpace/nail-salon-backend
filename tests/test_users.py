@@ -52,7 +52,7 @@ def test_get_user_by_id(existing_user):
 
 
 def test_get_user_by_phone(existing_user):
-    phone_number = existing_user["phone_number"]
+    phone_number = format_israeli_number(existing_user["phone_number"])
     response = client.get(f"/users/phone/{phone_number}")
     assert response.status_code == 200
     assert response.json()["phone_number"] == phone_number
