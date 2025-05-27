@@ -8,7 +8,7 @@ def create_service(db: Session, service: schemas.ServiceCreate):
         name=service.name,
         price=service.price,
         duration=service.duration,
-        description=service.duration
+        description=service.description
     )
     db.add(db_service)
     db.commit()

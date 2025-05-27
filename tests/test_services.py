@@ -15,6 +15,7 @@ def test_create_service(client):
     }
     response = client.post("/services/", json=service_payload)
     assert response.status_code == 200
+
     data = response.json()
     assert data["name"] == service_payload["name"]
     assert data["price"] == service_payload["price"]
