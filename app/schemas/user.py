@@ -39,3 +39,8 @@ class UserOut(BaseModel):
     user_type: UserType
 
     model_config = ConfigDict(from_attributes=True)
+
+
+class UserTypeUpdate(BaseModel):
+    user_id: int
+    new_type: str

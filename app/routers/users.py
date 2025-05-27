@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 from app import crud, schemas
 from app.database import get_db
 from app.models.user import UserType
+from app.schemas import UserTypeUpdate
 from app.utils.jwt_auth import require_user_type
 
 router = APIRouter(prefix="/users", tags=["Users"])
@@ -61,7 +62,7 @@ def get_users_by_type(user_type: UserType, db: Session = Depends(get_db)):
     return crud.get_users_by_type(user_type, db)
 
 
-@router.put("/{user_id}/type", response_model=schemas.UserOut)
-def update_user_type(user_id: int, new_type: str, db: Session = Depends(get_db),
+@router.put("/type", response_model=schemas.UserOut)
+def update_user_type(data: UserTypeUpdate, db: Session = Depends(get_db),
                      user=Depends(require_user_type("admin"))):
-    return crud.update_user_type(user_id, new_type, db)
+    return crud.update_user_type(data.user_id, data.new_type, db)

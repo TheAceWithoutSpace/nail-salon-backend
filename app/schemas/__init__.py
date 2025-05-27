@@ -1,4 +1,4 @@
-from .user import UserCreate, UserOut, UserUpdate
+from .user import UserCreate, UserOut, UserUpdate,UserTypeUpdate
 from .appointment import AppointmentOut, Appointment, AppointmentCreate, AppointmentUpdate
 from .auth import SendLoginCodeRequest, VerifyLoginCodeRequest
 from .service import ServiceCreate, ServiceOut
