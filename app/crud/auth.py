@@ -22,7 +22,6 @@ def send_login_code(phone_number: str, db: Session):
     # Send the OTP via SMS
     message = f"Your nail salon verification code is {code}"
     # send_sms(phone_number, message)
-    print(converted_phone_number)
     send_whatsapp_opt_code(to=converted_phone_number, code=code)
     return {"message": "OTP sent"}
 

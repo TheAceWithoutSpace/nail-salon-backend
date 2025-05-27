@@ -24,4 +24,4 @@ def verify_login_code(request: schemas.VerifyLoginCodeRequest, db: Session = Dep
 
     # Create JWT token for the authenticated user
     token = create_jwt_token(user)
-    return {"access_token": token, "token_type": "bearer"}
+    return {"access_token": token, "type": user.user_type, "token_type": "bearer"}
