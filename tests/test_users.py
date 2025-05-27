@@ -13,7 +13,7 @@ client = TestClient(app)
 @pytest.fixture
 def user_data():
     email = f"johndoe_{uuid.uuid4().hex[:6]}@example.com"
-    phone_number = f"10000000{random.randint(100, 999)}"
+    phone_number = f"10000100{random.randint(100, 999)}"
     return {
         "first_name": "John",  # first_name field is required
         "last_name": "Doe",  # last_name field is required

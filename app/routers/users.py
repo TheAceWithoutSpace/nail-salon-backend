@@ -3,7 +3,6 @@ from sqlalchemy.orm import Session
 from app import crud, schemas
 from app.database import get_db
 from app.models.user import UserType
-from app.schemas import UserTypeUpdate
 from app.utils.jwt_auth import require_user_type
 
 router = APIRouter(prefix="/users", tags=["Users"])
@@ -57,12 +56,28 @@ def delete_user(user_id: int, db: Session = Depends(get_db)):
     return crud.delete_user(user_id, db)
 
 
+# get users by type (worker, customer ,admin)
 @router.get("/type/{user_type}", response_model=list[schemas.UserOut])
 def get_users_by_type(user_type: UserType, db: Session = Depends(get_db)):
     return crud.get_users_by_type(user_type, db)
 
 
-@router.put("/type", response_model=schemas.UserOut)
-def update_user_type(data: UserTypeUpdate, db: Session = Depends(get_db),
-                     user=Depends(require_user_type("admin"))):
+# change the user Type (worker)
+@router.put("/type/worker", response_model=schemas.UserOut)
+def update_user_type_to_worker(data: schemas.PromoteUserToWorker, db: Session = Depends(get_db),
+                               user=Depends(require_user_type("admin"))):
+    return crud.update_user_type(data.user_id, data.new_type, db)
+
+
+# change the user Type (customer)
+@router.put("/type/customer", response_model=schemas.UserOut)
+def update_user_type_to_worker(data: schemas.PromoteUserToCustomer, db: Session = Depends(get_db),
+                               user=Depends(require_user_type("admin"))):
+    return crud.update_user_type(data.user_id, data.new_type, db)
+
+
+# change the user Type (admin)
+@router.put("/type/admin", response_model=schemas.UserOut)
+def update_user_type_to_worker(data: schemas.PromoteUserToAdmin, db: Session = Depends(get_db),
+                               user=Depends(require_user_type("admin"))):
     return crud.update_user_type(data.user_id, data.new_type, db)

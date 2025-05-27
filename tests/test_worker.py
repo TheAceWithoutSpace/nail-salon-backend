@@ -23,7 +23,7 @@ def create_worker(client):
             email=None,
     ):
         if phone_number is None:
-            phone_number = f"10000000{random.randint(100, 999)}"
+            phone_number = f"10010000{random.randint(100, 999)}"
         if email is None:
             email = f"johndoe_{uuid.uuid4().hex[:6]}@example.com"
 

@@ -41,6 +41,16 @@ class UserOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
 
-class UserTypeUpdate(BaseModel):
+class PromoteUserToWorker(BaseModel):
     user_id: int
-    new_type: str
+    user_type: UserType = UserType.worker
+
+
+class PromoteUserToCustomer(BaseModel):
+    user_id: int
+    user_type: UserType = UserType.customer
+
+
+class PromoteUserToAdmin(BaseModel):
+    user_id: int
+    user_type: UserType = UserType.admin
