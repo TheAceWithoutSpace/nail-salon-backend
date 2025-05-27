@@ -43,14 +43,14 @@ class UserOut(BaseModel):
 
 class PromoteUserToWorker(BaseModel):
     user_id: int
-    user_type: UserType = UserType.worker
+    new_type: UserType = UserType.worker
 
 
 class PromoteUserToCustomer(BaseModel):
     user_id: int
-    user_type: UserType = UserType.customer
+    new_type: UserType = UserType.customer
 
 
 class PromoteUserToAdmin(BaseModel):
     user_id: int
-    user_type: UserType = UserType.admin
+    new_type: UserType = UserType.admin

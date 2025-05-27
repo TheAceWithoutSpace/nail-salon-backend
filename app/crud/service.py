@@ -7,7 +7,8 @@ def create_service(db: Session, service: schemas.ServiceCreate):
     db_service = models.Service(
         name=service.name,
         price=service.price,
-        duration=service.duration
+        duration=service.duration,
+        description=service.duration
     )
     db.add(db_service)
     db.commit()
@@ -32,6 +33,7 @@ def update_service(db: Session, service_id: int, service: schemas.ServiceCreate)
         db_service.name = service.name
         db_service.price = service.price
         db_service.duration = service.duration
+        db_service.description = service.description
         db.commit()
         db.refresh(db_service)
         return db_service
