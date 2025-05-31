@@ -8,7 +8,7 @@ from app import schemas
 from app.database import get_db
 from app.crud import appointments as crud
 from app.schemas import AppointmentOut
-from app.utils.jwt_auth import get_current_user
+from app.utils.jwt_auth import get_current_user, get_worker_id_from_token
 
 router = APIRouter(prefix="/appointments", tags=["Appointments"])
 
@@ -45,10 +45,23 @@ def get_appointments_by_worker(worker_id: int, db: Session = Depends(get_db)):
     return crud.get_appointments_by_worker(db, worker_id)
 
 
+# Get appointments by connected worker
+@router.get("/connected_worker/", response_model=List[schemas.AppointmentOut])
+def get_appointments_by_worker(worker_id: int = Depends(get_worker_id_from_token), db: Session = Depends(get_db)):
+    return crud.get_appointments_by_worker(db, worker_id)
+
+
 # Get appointments by date
 @router.get("/date/{appointment_date}", response_model=List[schemas.AppointmentOut])
 def get_appointments_by_date(appointment_date: date, db: Session = Depends(get_db)):
     return crud.get_appointments_by_date(db, appointment_date)
+
+
+# Get appointments by date and connected_worker
+@router.get("/connected_worker/{appointment_date}", response_model=List[schemas.AppointmentOut])
+def get_appointments_by_date(appointment_date: date, worker_id: int = Depends(get_worker_id_from_token),
+                             db: Session = Depends(get_db)):
+    return crud.get_appointments_by_date_and_worker(db, appointment_date, worker_id)
 
 
 # Get appointments by time

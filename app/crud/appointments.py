@@ -29,6 +29,18 @@ def get_appointments_by_date(db: Session, appointment_date: date):
     return db.query(models.Appointment).filter(models.Appointment.date == appointment_date).all()
 
 
+# Get appointments by date and worker_id
+def get_appointments_by_date_and_worker(db: Session, appointment_date: date, worker_id: int):
+    return (
+        db.query(models.Appointment)
+        .filter(
+            models.Appointment.date == appointment_date,
+            models.Appointment.worker_id == worker_id
+        )
+        .all()
+    )
+
+
 # Get appointments by time
 def get_appointments_by_time(db: Session, appointment_time: time):
     return db.query(models.Appointment).filter(models.Appointment.time == appointment_time).all()
