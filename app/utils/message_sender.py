@@ -24,9 +24,9 @@ def send_whatsapp_opt_code(to, code):
         "to": to,
         "type": "template",
         "template": {
-            "name": 'otp2',
+            "name": 'otp',
             "language": {
-                "code": "en_us"
+                "code": "He"
             },
             "components": [
                 {

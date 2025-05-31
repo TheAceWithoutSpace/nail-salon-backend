@@ -98,8 +98,8 @@ def create_bulk_shifts(db: Session, payload: BulkShiftCreate) -> List[Shift]:
     for slot in payload.time_slots:
         shift = Shift(
             day=payload.day,
-            start_time=slot.start_time,
-            end_time=slot.end_time,
+            start_time=slot.start_time.replace(microsecond=0),
+            end_time=slot.end_time.replace(microsecond=0),
             worker_id=payload.worker_id,
         )
         db.add(shift)

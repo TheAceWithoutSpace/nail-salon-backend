@@ -20,7 +20,7 @@ class ShiftBase(BaseModel):
 class ShiftCreate(ShiftBase):
     day: date
     worker_id: int
-    user_id: Optional[int] = None
+    user_id: Optional[int] = Depends(get_worker_id_from_token)
 
 
 class ShiftResponse(ShiftBase):
@@ -47,7 +47,7 @@ class ShiftTimeSlot(BaseModel):
 class BulkShiftCreate(BaseModel):
     day: date
     time_slots: List[ShiftTimeSlot]
-    worker_id: int
+    worker_id: int = Depends(get_worker_id_from_token)
 
 
 class ShiftUpdate(ShiftBase):
