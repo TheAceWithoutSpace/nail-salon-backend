@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4b66728-f533-4cac-9890-08795fa72245" name="Changes" comment="update the whatsapp code template , changing the shift-create to work with the auth worker id">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routers/shifts.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/shifts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/schemas/shift.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/shift.py" afterDir="false" />
     </list>
@@ -180,7 +179,7 @@
       <workItem from="1746972593730" duration="404000" />
       <workItem from="1747150368724" duration="21135000" />
       <workItem from="1747561840198" duration="29487000" />
-      <workItem from="1748686574709" duration="4032000" />
+      <workItem from="1748686574709" duration="4175000" />
     </task>
     <task id="LOCAL‎-00001" summary="start-project">
       <option name="closed" value="true" />
@@ -390,7 +389,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1748700357567</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL‎-00027" summary="update the whatsapp code template , changing the shift-create to work with the auth worker id">
+      <option name="closed" value="true" />
+      <created>1748700959568</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL‎-00027" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748700959568</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
