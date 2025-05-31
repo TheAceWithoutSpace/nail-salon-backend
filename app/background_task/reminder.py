@@ -65,8 +65,8 @@ def send_appointment_reminders(db: Session):
 
         send_whatsapp_reminder(
             to=appt.user.phone_number,
-            customer_name=appt.user.first_name + appt.user.last_name,
-            worker_name=appt.worker.first_name + appt.worker.last_name,
+            customer_name=appt.user.first_name + " " + appt.user.last_name,
+            worker_name=appt.worker.first_name + " " + appt.worker.last_name,
             appt_time=time_str,
             service=appt.service,
             contact=appt.worker.phone_number
