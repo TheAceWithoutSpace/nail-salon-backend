@@ -61,6 +61,7 @@ def get_appointments_by_date(appointment_date: date, db: Session = Depends(get_d
 @router.get("/connected_worker/{appointment_date}", response_model=List[schemas.AppointmentOut])
 def get_appointments_by_date(appointment_date: date, worker_id: int = Depends(get_worker_id_from_token),
                              db: Session = Depends(get_db)):
+    print(worker_id)
     return crud.get_appointments_by_date_and_worker(db, appointment_date, worker_id)
 
 

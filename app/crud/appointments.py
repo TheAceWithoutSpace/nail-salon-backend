@@ -3,7 +3,7 @@ from typing import List
 from sqlalchemy.orm import Session
 from sqlalchemy import or_
 from app import models, schemas
-from datetime import date, time
+from datetime import date, time, datetime
 
 from app.models import Appointment
 from app.schemas.appointment import AppointmentUpdate
@@ -26,17 +26,26 @@ def get_appointment_by_id(db: Session, appointment_id: int):
 
 # Get appointments by date
 def get_appointments_by_date(db: Session, appointment_date: date):
-    return db.query(models.Appointment).filter(models.Appointment.date == appointment_date).all()
+    start_dt = datetime.combine(appointment_date, time.min)
+    end_dt = datetime.combine(appointment_date, time.max)
+
+    return db.query(models.Appointment).filter(
+        models.Appointment.appointment_time >= start_dt,
+        models.Appointment.appointment_time <= end_dt
+    ).all()
 
 
 # Get appointments by date and worker_id
 def get_appointments_by_date_and_worker(db: Session, appointment_date: date, worker_id: int):
+    start_dt = datetime.combine(appointment_date, time.min)
+    end_dt = datetime.combine(appointment_date, time.max)
     return (
         db.query(models.Appointment)
-        .filter(
-            models.Appointment.date == appointment_date,
-            models.Appointment.worker_id == worker_id
-        )
+        .filter(models.Appointment.appointment_time >= start_dt,
+                models.Appointment.appointment_time <= end_dt,
+                models.Appointment.date == appointment_date,
+                models.Appointment.worker_id == worker_id
+                )
         .all()
     )
 
