@@ -1,11 +1,14 @@
+from sqlite3 import Date
 from typing import List
 
+from fastapi import HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy import or_
 from app import models, schemas
-from datetime import date, time, datetime
+from datetime import date, time, datetime, timedelta
 
 from app.models import Appointment
+from app.models.appointment import AppointmentStatus
 from app.schemas.appointment import AppointmentUpdate
 
 
@@ -71,7 +74,7 @@ def create_appointment(db: Session, appointment: schemas.AppointmentCreate, user
         worker_id=appointment.worker_id,  # Assigning the worker to the appointment
         user_request=appointment.user_request,  # Saving the user's special request
         user_id=user_id,  # Assuming user_id is being passed or handled elsewhere
-        status="Booked"  # Default status for a new appointment
+        status=AppointmentStatus.BOOKED  # Default status for a new appointment
     )
     db.add(db_appointment)
     db.commit()
@@ -112,3 +115,27 @@ def delete_appointment(db: Session, appointment_id: int):
         db.commit()
         return db_appointment
     return None
+
+
+def update_appointment_status(db: Session, appointment_id: int, new_status: AppointmentStatus):
+    appointment = db.query(Appointment).filter(Appointment.id == appointment_id).first()
+    if not appointment:
+        raise HTTPException(status_code=404, detail="Appointment not found")
+
+    appointment.status = new_status
+    db.commit()
+    db.refresh(appointment)
+    return appointment
+
+
+def get_appointments_for_reminder(db: Session):
+    today = date.today()
+    tomorrow = today + timedelta(days=1)
+
+    appointments = db.query(Appointment).filter(
+        Appointment.reminder_sent == False,
+        Appointment.status == AppointmentStatus.BOOKED,
+        Appointment.appointment_time.cast(Date).in_([today, tomorrow])
+    ).all()
+
+    return appointments

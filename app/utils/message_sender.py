@@ -4,9 +4,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-API_KEY = os.getenv("INFOBIP_API_KEY")
-BASE_URL = os.getenv("INFOBIP_BASE_URL")
-SENDER = os.getenv("INFOBIP_SENDER")
+# API_KEY = os.getenv("INFOBIP_API_KEY")
+# BASE_URL = os.getenv("INFOBIP_BASE_URL")
+# SENDER = os.getenv("INFOBIP_SENDER")
 ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
 PHONE_NUMBER_ID = os.getenv("PHONE_NUMBER_ID")
 

@@ -1,4 +1,4 @@
-from .appointment import Appointment
+from .appointment import Appointment,AppointmentStatus
 from .verufy_code import VerifyCode
 from .user import User
 from .service import Service

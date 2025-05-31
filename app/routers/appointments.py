@@ -7,6 +7,7 @@ from typing import List
 from app import schemas
 from app.database import get_db
 from app.crud import appointments as crud
+from app.models.appointment import AppointmentStatus
 from app.schemas import AppointmentOut
 from app.utils.jwt_auth import get_current_user, get_worker_id_from_token
 
@@ -61,7 +62,6 @@ def get_appointments_by_date(appointment_date: date, db: Session = Depends(get_d
 @router.get("/connected_worker/{appointment_date}", response_model=List[schemas.AppointmentOut])
 def get_appointments_by_date(appointment_date: date, worker_id: int = Depends(get_worker_id_from_token),
                              db: Session = Depends(get_db)):
-    print(worker_id)
     return crud.get_appointments_by_date_and_worker(db, appointment_date, worker_id)
 
 
@@ -95,3 +95,33 @@ def modify_appointment(appointment_id: int, appointment_update: schemas.Appointm
 def delete_appointment(appointment_id: int, db: Session = Depends(get_db)):
     crud.delete_appointment(db, appointment_id)
     return
+
+
+@router.patch("/{appointment_id}/mark-no-show")
+def mark_no_show(appointment_id: int, db: Session = Depends(get_db)):
+    appointment = crud.update_appointment_status(db, appointment_id, AppointmentStatus.NO_SHOW)
+    return {
+        "message": "Status updated",
+        "appointment_id": appointment.id,
+        "new_status": appointment.status.value
+    }
+
+
+@router.patch("/{appointment_id}/mark-done")
+def mark_done(appointment_id: int, db: Session = Depends(get_db)):
+    appointment = crud.update_appointment_status(db, appointment_id, AppointmentStatus.DONE)
+    return {
+        "message": "Status updated",
+        "appointment_id": appointment.id,
+        "new_status": appointment.status.value
+    }
+
+
+@router.patch("/{appointment_id}/mark-booked")
+def mark_booked(appointment_id: int, db: Session = Depends(get_db)):
+    appointment = crud.update_appointment_status(db, appointment_id, AppointmentStatus.BOOKED)
+    return {
+        "message": "Status updated",
+        "appointment_id": appointment.id,
+        "new_status": appointment.status.value
+    }
