@@ -22,11 +22,37 @@ def get_shifts_by_day(db: Session, day: date):
     return db.query(Shift).filter(Shift.day == day).all()
 
 
+def get_shifts_by_day(db: Session, day: date, worker_id: int):
+    return (
+        db.query(Shift)
+        .filter(
+            Shift.day == day,
+            Shift.worker_id == worker_id
+        )
+        .all()
+    )
+
+
 def get_shifts_by_month(db: Session, year: int, month: int):
     from datetime import date
     start = date(year, month, 1)
     end = date(year + 1, 1, 1) if month == 12 else date(year, month + 1, 1)
     return db.query(Shift).filter(Shift.day >= start, Shift.day < end).all()
+
+
+def get_shifts_by_month(db: Session, year: int, month: int, worker_id: int):
+    start = date(year, month, 1)
+    end = date(year + 1, 1, 1) if month == 12 else date(year, month + 1, 1)
+
+    return (
+        db.query(Shift)
+        .filter(
+            Shift.worker_id == worker_id,
+            Shift.day >= start,
+            Shift.day < end
+        )
+        .all()
+    )
 
 
 def get_all_shifts(db: Session):

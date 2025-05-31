@@ -11,7 +11,7 @@ from sqlalchemy.orm import Session
 from starlette import status
 
 from app.database import get_db
-from app.models import User
+from app.models import User, Worker
 
 load_dotenv()
 
@@ -35,6 +35,29 @@ def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(
 
     except JWTError:
         raise HTTPException(status_code=401, detail="Invalid token")
+
+
+def get_worker_id_from_token(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)) -> int:
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        user_id = payload.get("user_id") or payload.get("id")  # Adjust key name based on your token payload
+        if user_id is None:
+            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid token")
+
+        # Get User by ID
+        user = db.query(User).filter(User.id == user_id).first()
+        if not user:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
+
+        # Get Worker by User phone number
+        worker = db.query(Worker).filter(Worker.phone_number == user.phone_number).first()
+        if not worker:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Worker not found")
+
+        return worker.id
+
+    except JWTError:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Could not validate credentials")
 
 
 def create_jwt_token(user):

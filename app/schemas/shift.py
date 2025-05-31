@@ -1,6 +1,9 @@
+from fastapi import Depends
 from pydantic import BaseModel, model_validator, ConfigDict
 from typing import List, Optional
 from datetime import date, time
+
+from app.utils.jwt_auth import get_worker_id_from_token
 
 
 class ShiftBase(BaseModel):
@@ -23,7 +26,7 @@ class ShiftCreate(ShiftBase):
 class ShiftResponse(ShiftBase):
     id: int
     day: date
-    worker_id: int
+    worker_id: int = Depends(get_worker_id_from_token)
     user_id: Optional[int]
     booked: bool
 

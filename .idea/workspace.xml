@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4b66728-f533-4cac-9890-08795fa72245" name="Changes" comment="fixed table bug when test starts the tables in the test_db isn't initialised">
-      <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
+    <list default="true" id="f4b66728-f533-4cac-9890-08795fa72245" name="Changes" comment="fixed the services error Test #18">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/shifts.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/shifts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/shifts.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/shifts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/worker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/shift.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/shift.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/jwt_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/jwt_auth.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,22 +47,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/ben78/PycharmProjects/nail-salon",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "two.files.diff.last.used.folder": "C:/Users/ben78/PycharmProjects/nail-salon",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ben78/PycharmProjects/nail-salon&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;two.files.diff.last.used.folder&quot;: &quot;C:/Users/ben78/PycharmProjects/nail-salon&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ben78\PycharmProjects\nail-salon" />
@@ -67,7 +77,29 @@
       <recent name="C:\Users\ben78\PycharmProjects\nail-salon\app" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_services.test_get_service_by_id">
+  <component name="RunManager" selected="Python tests.Python tests for test_services.test_create_service">
+    <configuration name="message_sender" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="nail-salon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\ben78\PycharmProjects\nail-salon\app\utils\message_sender.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests for test_services.test_create_service" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="nail-salon" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -98,7 +130,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_services.test_get_services" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_users.test_create_user" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="nail-salon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -109,11 +141,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_services.test_get_services&quot;" />
+      <option name="_new_target" value="&quot;test_users.test_create_user&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_worker.test_create_worker" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_worker.test_update_worker" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="nail-salon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -124,32 +156,17 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_worker.test_create_worker&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_worker.test_get_worker" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="nail-salon" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_worker.test_get_worker&quot;" />
+      <option name="_new_target" value="&quot;test_worker.test_update_worker&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_services.test_get_service_by_id" />
-        <item itemvalue="Python tests.Python tests for test_services.test_get_services" />
         <item itemvalue="Python tests.Python tests for test_services.test_create_service" />
-        <item itemvalue="Python tests.Python tests for test_worker.test_create_worker" />
-        <item itemvalue="Python tests.Python tests for test_worker.test_get_worker" />
+        <item itemvalue="Python tests.Python tests for test_worker.test_update_worker" />
+        <item itemvalue="Python tests.Python tests for test_users.test_create_user" />
+        <item itemvalue="Python.message_sender" />
+        <item itemvalue="Python tests.Python tests for test_services.test_get_service_by_id" />
       </list>
     </recent_temporary>
   </component>
@@ -164,7 +181,9 @@
       <workItem from="1746966926183" duration="3104000" />
       <workItem from="1746972377093" duration="204000" />
       <workItem from="1746972593730" duration="404000" />
-      <workItem from="1747150368724" duration="19343000" />
+      <workItem from="1747150368724" duration="21135000" />
+      <workItem from="1747561840198" duration="29487000" />
+      <workItem from="1748686574709" duration="1031000" />
     </task>
     <task id="LOCAL‎-00001" summary="start-project">
       <option name="closed" value="true" />
@@ -230,7 +249,127 @@
       <option name="project" value="LOCAL‎" />
       <updated>1747328861704</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL‎-00009" summary="fixed table bug when test starts the tables in the test_db isn't initialised">
+      <option name="closed" value="true" />
+      <created>1747329497483</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL‎-00009" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1747329497483</updated>
+    </task>
+    <task id="LOCAL‎-00010" summary="added whatsup support , fixed the JWT auth , added appointments by user">
+      <option name="closed" value="true" />
+      <created>1748104660585</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL‎-00010" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748104660585</updated>
+    </task>
+    <task id="LOCAL‎-00011" summary="added whatsup support , fixed the JWT auth , added appointments by user">
+      <option name="closed" value="true" />
+      <created>1748104857627</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL‎-00011" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748104857627</updated>
+    </task>
+    <task id="LOCAL‎-00012" summary="fixed the test-build-yml for the latest build">
+      <option name="closed" value="true" />
+      <created>1748105066170</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL‎-00012" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748105066170</updated>
+    </task>
+    <task id="LOCAL‎-00013" summary="fixed auth , and user sign-up , now user-signup will send auth code after creating new user">
+      <option name="closed" value="true" />
+      <created>1748194663754</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL‎-00013" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748194663754</updated>
+    </task>
+    <task id="LOCAL‎-00014" summary="fixed the create-user-test">
+      <option name="closed" value="true" />
+      <created>1748194905891</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL‎-00014" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748194905891</updated>
+    </task>
+    <task id="LOCAL‎-00015" summary="fixed the create-user-test">
+      <option name="closed" value="true" />
+      <created>1748195171875</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL‎-00015" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748195171875</updated>
+    </task>
+    <task id="LOCAL‎-00016" summary="bug fix in auth-after creat-user">
+      <option name="closed" value="true" />
+      <created>1748195716466</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL‎-00016" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748195716466</updated>
+    </task>
+    <task id="LOCAL‎-00017" summary="fixed user-router , added basic user routs , added backend auth by JWT Token , and user-rule fixed user request from the db">
+      <option name="closed" value="true" />
+      <created>1748275041969</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL‎-00017" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748275041969</updated>
+    </task>
+    <task id="LOCAL‎-00018" summary="fixed the get-user-by-phone-number test , and fixed the format_israeli_number function to handle more use-cases">
+      <option name="closed" value="true" />
+      <created>1748275357180</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL‎-00018" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748275357180</updated>
+    </task>
+    <task id="LOCAL‎-00019" summary="added user_type to auth response for easy navigation for base app">
+      <option name="closed" value="true" />
+      <created>1748359306154</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL‎-00019" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748359306154</updated>
+    </task>
+    <task id="LOCAL‎-00020" summary="added userTypeSchema for the worker-promote screen in the admin page">
+      <option name="closed" value="true" />
+      <created>1748360374386</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL‎-00020" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748360374386</updated>
+    </task>
+    <task id="LOCAL‎-00021" summary="changed the change-user-type route to 3 routes that get by the schema , the type is static in the schema and cannot be modified">
+      <option name="closed" value="true" />
+      <created>1748361254950</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL‎-00021" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748361254950</updated>
+    </task>
+    <task id="LOCAL‎-00022" summary="added description for services . fixed user_type schema">
+      <option name="closed" value="true" />
+      <created>1748361892348</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL‎-00022" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748361892348</updated>
+    </task>
+    <task id="LOCAL‎-00023" summary="fixed the services error Test #18">
+      <option name="closed" value="true" />
+      <created>1748362691157</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL‎-00023" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748362691157</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,11 +391,24 @@
     <MESSAGE value="added routes as for v1 of the backend , created tests for the route added connection to the sql-db , added comments and added test.yml file for dynamic test . this is the v1 stable version were all tests have passed in the test env" />
     <MESSAGE value="fixed action to run from master" />
     <MESSAGE value="fixed table bug when test starts the tables in the test_db isn't initialised" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed table bug when test starts the tables in the test_db isn't initialised" />
+    <MESSAGE value="added whatsup support , fixed the JWT auth , added appointments by user" />
+    <MESSAGE value="fixed the test-build-yml for the latest build" />
+    <MESSAGE value="fixed auth , and user sign-up , now user-signup will send auth code after creating new user" />
+    <MESSAGE value="fixed the create-user-test" />
+    <MESSAGE value="bug fix in auth-after creat-user" />
+    <MESSAGE value="fixed user-router , added basic user routs , added backend auth by JWT Token , and user-rule fixed user request from the db" />
+    <MESSAGE value="fixed the get-user-by-phone-number test , and fixed the format_israeli_number function to handle more use-cases" />
+    <MESSAGE value="added user_type to auth response for easy navigation for base app" />
+    <MESSAGE value="added userTypeSchema for the worker-promote screen in the admin page" />
+    <MESSAGE value="changed the change-user-type route to 3 routes that get by the schema , the type is static in the schema and cannot be modified" />
+    <MESSAGE value="added description for services . fixed user_type schema" />
+    <MESSAGE value="fixed the services error Test #18" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed the services error Test #18" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/nail_salon$sms.coverage" NAME="sms Coverage Results" MODIFIED="1747821569311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/utils" />
     <SUITE FILE_PATH="coverage/nail_salon$auth.coverage" NAME="auth Coverage Results" MODIFIED="1747024688390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/routers" />
-    <SUITE FILE_PATH="coverage/nail_salon$.coverage" NAME=" Coverage Results" MODIFIED="1747298469383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/nail_salon$.coverage" NAME=" Coverage Results" MODIFIED="1748362624899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/nail_salon$main.coverage" NAME="main Coverage Results" MODIFIED="1747024694593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
   </component>
 </project>
