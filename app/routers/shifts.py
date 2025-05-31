@@ -1,5 +1,5 @@
 from typing import List
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 from datetime import date
 from app.database import get_db
@@ -11,10 +11,13 @@ router = APIRouter(prefix="/shifts", tags=["Shifts"])
 
 # Route to create shifts (Bulk creation)
 @router.post("/", response_model=List[schemas.ShiftResponse])
-def create_shifts(data: schemas.BulkShiftCreate, worker_id: int = Depends(get_worker_id_from_token),
-                  db: Session = Depends(get_db)):
-    if data.worker_id is None:
-        data.worker_id = worker_id
+def create_shifts(
+        data: schemas.BulkShiftCreate,
+        token_worker_id: int = Depends(get_worker_id_from_token),
+        db: Session = Depends(get_db)
+):
+    # Decide which worker_id to use
+    data.worker_id = data.worker_id or token_worker_id
     return crud.create_bulk_shifts(db, data)
 
 

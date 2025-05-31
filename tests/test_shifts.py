@@ -1,6 +1,4 @@
 import pytest
-import random
-import uuid
 from fastapi.testclient import TestClient
 from app.main import app
 from datetime import date
@@ -98,3 +96,8 @@ def test_get_shifts_by_worker(shift_payload):
     worker_id = shift_payload["worker_id"]
     response = client.get(f"/shifts/worker/{worker_id}")
     assert response.status_code in (200, 404)
+
+
+# ---- CLEANUP ----
+def teardown_module(module):
+    app.dependency_overrides = {}

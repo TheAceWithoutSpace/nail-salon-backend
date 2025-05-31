@@ -14,6 +14,8 @@ from app.models import Worker, Appointment, User
 from app.schemas import UserCreate
 from sqlalchemy.pool import StaticPool
 
+from app.utils.jwt_auth import get_worker_id_from_token
+
 load_dotenv()
 
 # Use a test-specific database URL (can be SQLite in-memory or separate test DB)
@@ -38,6 +40,17 @@ def override_get_db():
         yield db
     finally:
         db.close()
+
+
+@pytest.fixture(autouse=True)
+def override_token_dependency(create_worker):
+    """
+    Automatically override `get_worker_id_from_token` with a fake worker for all tests.
+    """
+    worker = create_worker()
+    app.dependency_overrides[get_worker_id_from_token] = lambda: worker.id
+    yield
+    app.dependency_overrides.clear()
 
 
 # Override the default get_db dependency with the test database session
