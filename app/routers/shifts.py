@@ -11,7 +11,9 @@ router = APIRouter(prefix="/shifts", tags=["Shifts"])
 
 # Route to create shifts (Bulk creation)
 @router.post("/", response_model=List[schemas.ShiftResponse])
-def create_shifts(data: schemas.BulkShiftCreate, db: Session = Depends(get_db)):
+def create_shifts(data: schemas.BulkShiftCreate, worker_id: int = Depends(get_worker_id_from_token),
+                  db: Session = Depends(get_db)):
+    data.worker_id = worker_id
     return crud.create_bulk_shifts(db, data)
 
 

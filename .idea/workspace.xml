@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4b66728-f533-4cac-9890-08795fa72245" name="Changes" comment="fixed bugs , that were discovered in the tests">
+    <list default="true" id="f4b66728-f533-4cac-9890-08795fa72245" name="Changes" comment="update the whatsapp code template , changing the shift-create to work with the auth worker id">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/crud/shifts.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/shifts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/shifts.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/shifts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/schemas/shift.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/shift.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/utils/message_sender.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/message_sender.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +180,7 @@
       <workItem from="1746972593730" duration="404000" />
       <workItem from="1747150368724" duration="21135000" />
       <workItem from="1747561840198" duration="29487000" />
-      <workItem from="1748686574709" duration="3375000" />
+      <workItem from="1748686574709" duration="4032000" />
     </task>
     <task id="LOCAL‎-00001" summary="start-project">
       <option name="closed" value="true" />
@@ -383,7 +382,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1748688119584</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL‎-00026" summary="update the whatsapp code template , changing the shift-create to work with the auth worker id">
+      <option name="closed" value="true" />
+      <created>1748700357567</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL‎-00026" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748700357567</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,7 +426,8 @@
     <MESSAGE value="fixed the services error Test #18" />
     <MESSAGE value="added routs of worker , and shifts by jwt-auth users , this routes will use the jwt and get the worker-id for the route actions , created a jwt get_worker for this method" />
     <MESSAGE value="fixed bugs , that were discovered in the tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs , that were discovered in the tests" />
+    <MESSAGE value="update the whatsapp code template , changing the shift-create to work with the auth worker id" />
+    <option name="LAST_COMMIT_MESSAGE" value="update the whatsapp code template , changing the shift-create to work with the auth worker id" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/nail_salon$sms.coverage" NAME="sms Coverage Results" MODIFIED="1747821569311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/utils" />

@@ -47,7 +47,7 @@ class ShiftTimeSlot(BaseModel):
 class BulkShiftCreate(BaseModel):
     day: date
     time_slots: List[ShiftTimeSlot]
-    worker_id: int = Depends(get_worker_id_from_token)
+    worker_id: Optional[int] = None 
 
 
 class ShiftUpdate(ShiftBase):
