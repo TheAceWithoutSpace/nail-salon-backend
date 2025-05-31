@@ -61,7 +61,7 @@ def test_update_appointment(client, db_session, create_appointment, create_worke
     response = client.put(f"/appointments/{appointment.id}", json={
         "service": "Pedicure",
         "appointment_time": (datetime.utcnow() + timedelta(hours=2)).isoformat(),
-        "status": AppointmentStatus.DONE,
+        "status": AppointmentStatus.DONE.value,
         "worker_id": new_worker.id,
         "user_request": "Foot spa",
         "user_id": appointment.user_id,

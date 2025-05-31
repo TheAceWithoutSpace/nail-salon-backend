@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4b66728-f533-4cac-9890-08795fa72245" name="Changes" comment="fixed message template spaces for clear worker name and customer name">
+    <list default="true" id="f4b66728-f533-4cac-9890-08795fa72245" name="Changes" comment="fixed the test to work with the new enum">
       <change beforePath="$PROJECT_DIR$/tests/test_appointmetns.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_appointmetns.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,7 +171,7 @@
       <workItem from="1746972593730" duration="404000" />
       <workItem from="1747150368724" duration="21135000" />
       <workItem from="1747561840198" duration="29487000" />
-      <workItem from="1748686574709" duration="13218000" />
+      <workItem from="1748686574709" duration="13349000" />
     </task>
     <task id="LOCAL‎-00001" summary="start-project">
       <option name="closed" value="true" />
@@ -461,7 +461,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1748717924298</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL‎-00037" summary="fixed the test to work with the new enum">
+      <option name="closed" value="true" />
+      <created>1748718075217</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL‎-00037" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748718075217</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,7 +487,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="start-project" />
     <MESSAGE value="added routes as for v1 of the backend , created tests for the route added connection to the sql-db , added comments and added test.yml file for dynamic test . this is the v1 stable version were all tests have passed in the test env" />
     <MESSAGE value="fixed action to run from master" />
     <MESSAGE value="fixed table bug when test starts the tables in the test_db isn't initialised" />
@@ -504,7 +511,8 @@
     <MESSAGE value="fixed appointments get by date search" />
     <MESSAGE value="added appointemnt routes for change appointment status , added appointment status enum , added scheduler that runs every 1 hour ,added scheduled task , send reminder for users that there appointments is near fixed bugs in appointments" />
     <MESSAGE value="fixed message template spaces for clear worker name and customer name" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed message template spaces for clear worker name and customer name" />
+    <MESSAGE value="fixed the test to work with the new enum" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed the test to work with the new enum" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/nail_salon$sms.coverage" NAME="sms Coverage Results" MODIFIED="1747821569311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/utils" />
