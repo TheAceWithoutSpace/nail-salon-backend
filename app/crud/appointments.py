@@ -39,15 +39,12 @@ def get_appointments_by_date(db: Session, appointment_date: date):
 def get_appointments_by_date_and_worker(db: Session, appointment_date: date, worker_id: int):
     start_dt = datetime.combine(appointment_date, time.min)
     end_dt = datetime.combine(appointment_date, time.max)
-    return (
-        db.query(models.Appointment)
-        .filter(models.Appointment.appointment_time >= start_dt,
-                models.Appointment.appointment_time <= end_dt,
-                models.Appointment.date == appointment_date,
-                models.Appointment.worker_id == worker_id
-                )
-        .all()
-    )
+
+    return db.query(models.Appointment).filter(
+        models.Appointment.appointment_time >= start_dt,
+        models.Appointment.appointment_time <= end_dt,
+        models.Appointment.worker_id == worker_id
+    ).all()
 
 
 # Get appointments by time
