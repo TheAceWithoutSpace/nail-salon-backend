@@ -27,7 +27,7 @@ def get_shifts_by_day(day: date, db: Session = Depends(get_db)):
 # Route to get shifts by day and worker_id
 @router.get("/day_worker_id/{day}", response_model=List[schemas.ShiftOut])
 def get_shifts_by_day(day: date, worker_id: int, db: Session = Depends(get_db)):
-    shifts = crud.get_shifts_by_day(db, day, worker_id)
+    shifts = crud.get_shifts_by_day_and_worker(db, day, worker_id)
     if not shifts:
         raise HTTPException(status_code=404, detail="No shifts found for this day")
     return shifts
@@ -36,7 +36,7 @@ def get_shifts_by_day(day: date, worker_id: int, db: Session = Depends(get_db)):
 # Route to get shifts by day and connected worker_id
 @router.get("/day_connected_worker_id/{day}", response_model=List[schemas.ShiftOut])
 def get_shifts_by_day(day: date, worker_id: int = Depends(get_worker_id_from_token), db: Session = Depends(get_db)):
-    shifts = crud.get_shifts_by_day(db, day, worker_id)
+    shifts = crud.get_shifts_by_day_and_worker(db, day, worker_id)
     if not shifts:
         raise HTTPException(status_code=404, detail="No shifts found for this day")
     return shifts
@@ -94,7 +94,7 @@ def get_shifts_by_month(year: int, month: int, db: Session = Depends(get_db)):
 # Route to get shifts by month for worker
 @router.get("/month_worker_id/{year}/{month}", response_model=List[schemas.ShiftOut])
 def get_shifts_by_month(year: int, month: int, worker_id: int, db: Session = Depends(get_db)):
-    shifts = crud.get_shifts_by_month(db, year, month, worker_id)
+    shifts = crud.get_shifts_by_month_and_worker(db, year, month, worker_id)
     if not shifts:
         raise HTTPException(status_code=404, detail="No shifts found for this month")
     return shifts
@@ -104,7 +104,7 @@ def get_shifts_by_month(year: int, month: int, worker_id: int, db: Session = Dep
 @router.get("/month_connected_worker_id/{year}/{month}", response_model=List[schemas.ShiftOut])
 def get_shifts_by_month(year: int, month: int, worker_id: int = Depends(get_worker_id_from_token),
                         db: Session = Depends(get_db)):
-    shifts = crud.get_shifts_by_month(db, year, month, worker_id)
+    shifts = crud.get_shifts_by_month_and_worker(db, year, month, worker_id)
     if not shifts:
         raise HTTPException(status_code=404, detail="No shifts found for this month")
     return shifts
