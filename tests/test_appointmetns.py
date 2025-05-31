@@ -3,7 +3,7 @@ import pytest
 from fastapi.testclient import TestClient
 from datetime import datetime, timedelta
 from app.main import app
-from app.models import Appointment
+from app.models import Appointment, AppointmentStatus
 
 client = TestClient(app)
 
@@ -61,7 +61,7 @@ def test_update_appointment(client, db_session, create_appointment, create_worke
     response = client.put(f"/appointments/{appointment.id}", json={
         "service": "Pedicure",
         "appointment_time": (datetime.utcnow() + timedelta(hours=2)).isoformat(),
-        "status": "Confirmed",
+        "status": AppointmentStatus.DONE,
         "worker_id": new_worker.id,
         "user_request": "Foot spa",
         "user_id": appointment.user_id,
