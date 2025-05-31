@@ -1,9 +1,18 @@
 import pytest
+import random
+import uuid
 from fastapi.testclient import TestClient
 from app.main import app
 from datetime import date
+from app.utils.jwt_auth import get_worker_id_from_token  # Adjust path as needed
 
 client = TestClient(app)
+
+
+@pytest.fixture(autouse=True)
+def override_token_dependency(create_worker):
+    worker = create_worker()
+    app.dependency_overrides[get_worker_id_from_token] = lambda: worker.id
 
 
 @pytest.fixture

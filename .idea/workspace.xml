@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4b66728-f533-4cac-9890-08795fa72245" name="Changes" comment="fixed bug from tests">
+    <list default="true" id="f4b66728-f533-4cac-9890-08795fa72245" name="Changes" comment="added dependency_override for the tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/shifts.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/shifts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_shifts.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_shifts.py" afterDir="false" />
     </list>
@@ -75,30 +74,8 @@
       <recent name="C:\Users\ben78\PycharmProjects\nail-salon\app" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_shifts.test_create_shifts">
-    <configuration name="message_sender" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="nail-salon" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/utils" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\ben78\PycharmProjects\nail-salon\app\utils\message_sender.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_services.test_create_service" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Python tests for test_appointmetns.test_delete_appointment">
+    <configuration name="Python tests for test_appointmetns.test_create_appointment" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="nail-salon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -109,7 +86,52 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_services.test_create_service&quot;" />
+      <option name="_new_target" value="&quot;test_appointmetns.test_create_appointment&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_appointmetns.test_delete_appointment" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="nail-salon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_appointmetns.test_delete_appointment&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_appointmetns.test_get_appointments" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="nail-salon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_appointmetns.test_get_appointments&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_appointmetns.test_update_appointment" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="nail-salon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_appointmetns.test_update_appointment&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -128,43 +150,13 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_users.test_create_user" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="nail-salon" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_users.test_create_user&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_worker.test_update_worker" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="nail-salon" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_worker.test_update_worker&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for test_appointmetns.test_delete_appointment" />
+        <item itemvalue="Python tests.Python tests for test_appointmetns.test_update_appointment" />
+        <item itemvalue="Python tests.Python tests for test_appointmetns.test_get_appointments" />
+        <item itemvalue="Python tests.Python tests for test_appointmetns.test_create_appointment" />
         <item itemvalue="Python tests.Python tests for test_shifts.test_create_shifts" />
-        <item itemvalue="Python tests.Python tests for test_services.test_create_service" />
-        <item itemvalue="Python tests.Python tests for test_worker.test_update_worker" />
-        <item itemvalue="Python tests.Python tests for test_users.test_create_user" />
-        <item itemvalue="Python.message_sender" />
       </list>
     </recent_temporary>
   </component>
@@ -181,7 +173,7 @@
       <workItem from="1746972593730" duration="404000" />
       <workItem from="1747150368724" duration="21135000" />
       <workItem from="1747561840198" duration="29487000" />
-      <workItem from="1748686574709" duration="4895000" />
+      <workItem from="1748686574709" duration="5547000" />
     </task>
     <task id="LOCAL‎-00001" summary="start-project">
       <option name="closed" value="true" />
@@ -407,7 +399,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1748701110432</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL‎-00029" summary="added dependency_override for the tests">
+      <option name="closed" value="true" />
+      <created>1748701864120</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL‎-00029" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748701864120</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,12 +445,13 @@
     <MESSAGE value="fixed bugs , that were discovered in the tests" />
     <MESSAGE value="update the whatsapp code template , changing the shift-create to work with the auth worker id" />
     <MESSAGE value="fixed bug from tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bug from tests" />
+    <MESSAGE value="added dependency_override for the tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="added dependency_override for the tests" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/nail_salon$sms.coverage" NAME="sms Coverage Results" MODIFIED="1747821569311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/utils" />
     <SUITE FILE_PATH="coverage/nail_salon$auth.coverage" NAME="auth Coverage Results" MODIFIED="1747024688390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/routers" />
-    <SUITE FILE_PATH="coverage/nail_salon$.coverage" NAME=" Coverage Results" MODIFIED="1748701759891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/nail_salon$.coverage" NAME=" Coverage Results" MODIFIED="1748702352544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/nail_salon$main.coverage" NAME="main Coverage Results" MODIFIED="1747024694593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
   </component>
 </project>

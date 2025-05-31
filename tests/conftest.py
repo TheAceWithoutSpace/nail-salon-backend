@@ -42,15 +42,15 @@ def override_get_db():
         db.close()
 
 
-@pytest.fixture(autouse=True)
-def override_token_dependency(create_worker):
-    """
-    Automatically override `get_worker_id_from_token` with a fake worker for all tests.
-    """
-    worker = create_worker()
-    app.dependency_overrides[get_worker_id_from_token] = lambda: worker.id
-    yield
-    app.dependency_overrides.clear()
+# @pytest.fixture(autouse=True)
+# def override_token_dependency(create_worker):
+#     """
+#     Automatically override `get_worker_id_from_token` with a fake worker for all tests.
+#     """
+#     worker = create_worker()
+#     app.dependency_overrides[get_worker_id_from_token] = lambda: worker.id
+#     yield
+#     app.dependency_overrides.clear()
 
 
 # Override the default get_db dependency with the test database session
