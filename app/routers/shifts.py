@@ -140,9 +140,9 @@ def get_shifts_by_worker(worker_id: int = Depends(get_worker_id_from_token), db:
     return shifts
 
 
-@router.get("/worker/shifts_summary")
+@router.get("/shifts_summary")
 def get_worker_shifts_summary(
-        db: Session = Depends(get_db),
-        current_user: models.User = Depends(get_current_user)
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(get_current_user)
 ):
-    return crud.shift_summary.get_worker_shift_summary(db, current_user.id)
+    return crud.get_worker_shift_summary(db, current_user.id)
