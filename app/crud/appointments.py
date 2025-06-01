@@ -54,7 +54,7 @@ def get_appointments_by_date_and_worker(db: Session, appointment_date: date, wor
             (models.Appointment.status == AppointmentStatus.DONE, 3),
             else_=1
         ),
-        models.Appointment.start_time
+        models.Appointment.appointment_time
     ).all()
 
 
