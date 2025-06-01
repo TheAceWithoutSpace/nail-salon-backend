@@ -16,18 +16,18 @@ def create_worker_route(worker: WorkerCreate, db: Session = Depends(get_db)):
     return create_worker(db=db, worker=worker)
 
 
-# Get worker by id
-@router.get("/{worker_id}", response_model=Worker)
-def get_worker_route(worker_id: int, db: Session = Depends(get_db)):
+# get connected worker by id
+@router.get("/connected_worker", response_model=Worker)
+def get_connected_worker_route(worker_id: int = Depends(get_worker_id_from_token), db: Session = Depends(get_db)):
     db_worker = get_worker(db=db, worker_id=worker_id)
     if db_worker is None:
         raise HTTPException(status_code=404, detail="Worker not found")
     return db_worker
 
 
-# get connected worker by id
-@router.get("/connected_worker", response_model=Worker)
-def get_connected_worker_route(worker_id: int = Depends(get_worker_id_from_token), db: Session = Depends(get_db)):
+# Get worker by id
+@router.get("/{worker_id}", response_model=Worker)
+def get_worker_route(worker_id: int, db: Session = Depends(get_db)):
     db_worker = get_worker(db=db, worker_id=worker_id)
     if db_worker is None:
         raise HTTPException(status_code=404, detail="Worker not found")

@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f4b66728-f533-4cac-9890-08795fa72245" name="Changes" comment="debug -bug of 0 in summery of shifts and appointments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/crud/shifts.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/shifts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/shifts.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/shifts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/worker.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +179,7 @@
       <workItem from="1746972593730" duration="404000" />
       <workItem from="1747150368724" duration="21135000" />
       <workItem from="1747561840198" duration="29487000" />
-      <workItem from="1748686574709" duration="20887000" />
+      <workItem from="1748686574709" duration="21520000" />
     </task>
     <task id="LOCAL‎-00001" summary="start-project">
       <option name="closed" value="true" />
@@ -558,7 +557,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1748786997494</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL‎-00048" summary="debug -bug of 0 in summery of shifts and appointments">
+      <option name="closed" value="true" />
+      <created>1748787971025</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL‎-00048" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748787971025</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
