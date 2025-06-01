@@ -1,11 +1,11 @@
 from typing import List
 
 from sqlalchemy.orm import Session
-from datetime import date, timedelta
 
 from app import models
 from app.models.shift import Shift
 from app.schemas.shift import BulkShiftCreate, ShiftCreate
+from datetime import datetime, date, timedelta, time
 
 
 def create_shifts(db: Session, data: BulkShiftCreate):
@@ -110,9 +110,6 @@ def create_bulk_shifts(db: Session, payload: BulkShiftCreate) -> List[Shift]:
     return shifts
 
 
-from datetime import datetime, date, timedelta, time
-
-
 def get_worker_shift_summary(db: Session, worker_id: int):
     today = date.today()
     tomorrow = today + timedelta(days=1)
@@ -124,15 +121,16 @@ def get_worker_shift_summary(db: Session, worker_id: int):
     # Start and end of tomorrow
     tomorrow_start = datetime.combine(tomorrow, time.min)
     tomorrow_end = datetime.combine(tomorrow, time.max)
-
+    print(today)
+    print(tomorrow)
     today_shifts = db.query(models.Shift).filter(
         models.Shift.worker_id == worker_id,
-        models.Shift.day == today
+        models.Shift.day.between(today_start, today_end)
     ).count()
 
     tomorrow_shifts = db.query(models.Shift).filter(
         models.Shift.worker_id == worker_id,
-        models.Shift.day == tomorrow
+        models.Shift.day.between(tomorrow_start, tomorrow_end)
     ).count()
 
     today_appointments = db.query(models.Appointment).filter(
