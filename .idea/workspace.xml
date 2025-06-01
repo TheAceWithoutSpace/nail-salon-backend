@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4b66728-f533-4cac-9890-08795fa72245" name="Changes" comment="added shifts summery for worker-home-page">
+    <list default="true" id="f4b66728-f533-4cac-9890-08795fa72245" name="Changes" comment="fixed shifts_summery bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/shifts.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/shifts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/crud/shifts.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/shifts.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +172,7 @@
       <workItem from="1746972593730" duration="404000" />
       <workItem from="1747150368724" duration="21135000" />
       <workItem from="1747561840198" duration="29487000" />
-      <workItem from="1748686574709" duration="18796000" />
+      <workItem from="1748686574709" duration="19420000" />
     </task>
     <task id="LOCAL‎-00001" summary="start-project">
       <option name="closed" value="true" />
@@ -526,7 +526,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1748785031787</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL‎-00045" summary="fixed shifts_summery bug">
+      <option name="closed" value="true" />
+      <created>1748785885539</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL‎-00045" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748785885539</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,7 +552,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed the test-build-yml for the latest build" />
     <MESSAGE value="fixed auth , and user sign-up , now user-signup will send auth code after creating new user" />
     <MESSAGE value="fixed the create-user-test" />
     <MESSAGE value="bug fix in auth-after creat-user" />
@@ -569,7 +576,8 @@
     <MESSAGE value="added sort-by status for the appointments by date and worker , this will be used in the worker appointments for today" />
     <MESSAGE value="fixed bug" />
     <MESSAGE value="added shifts summery for worker-home-page" />
-    <option name="LAST_COMMIT_MESSAGE" value="added shifts summery for worker-home-page" />
+    <MESSAGE value="fixed shifts_summery bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed shifts_summery bug" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/nail_salon$sms.coverage" NAME="sms Coverage Results" MODIFIED="1747821569311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/utils" />

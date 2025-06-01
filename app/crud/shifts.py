@@ -110,9 +110,20 @@ def create_bulk_shifts(db: Session, payload: BulkShiftCreate) -> List[Shift]:
     return shifts
 
 
+from datetime import datetime, date, timedelta, time
+
+
 def get_worker_shift_summary(db: Session, worker_id: int):
     today = date.today()
     tomorrow = today + timedelta(days=1)
+
+    # Start and end of today
+    today_start = datetime.combine(today, time.min)  # 00:00:00
+    today_end = datetime.combine(today, time.max)  # 23:59:59.999999
+
+    # Start and end of tomorrow
+    tomorrow_start = datetime.combine(tomorrow, time.min)
+    tomorrow_end = datetime.combine(tomorrow, time.max)
 
     today_shifts = db.query(models.Shift).filter(
         models.Shift.worker_id == worker_id,
@@ -126,12 +137,12 @@ def get_worker_shift_summary(db: Session, worker_id: int):
 
     today_appointments = db.query(models.Appointment).filter(
         models.Appointment.worker_id == worker_id,
-        models.Appointment.appointment_time.between(today, today + timedelta(days=1))
+        models.Appointment.appointment_time.between(today_start, today_end)
     ).count()
 
     tomorrow_appointments = db.query(models.Appointment).filter(
         models.Appointment.worker_id == worker_id,
-        models.Appointment.appointment_time.between(tomorrow, tomorrow + timedelta(days=1))
+        models.Appointment.appointment_time.between(tomorrow_start, tomorrow_end)
     ).count()
 
     return {
