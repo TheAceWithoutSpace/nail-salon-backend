@@ -55,6 +55,7 @@ def get_appointments_by_time(db: Session, appointment_time: time):
     return db.query(models.Appointment).filter(models.Appointment.time == appointment_time).all()
 
 
+# Get appointment by user_id
 def get_appointments_by_user(db: Session, user_id: int) -> List[Appointment]:
     return db.query(Appointment).filter(Appointment.user_id == user_id).order_by(
         Appointment.appointment_time.desc()).all()
@@ -117,6 +118,7 @@ def delete_appointment(db: Session, appointment_id: int):
     return None
 
 
+# update the appointment status
 def update_appointment_status(db: Session, appointment_id: int, new_status: AppointmentStatus):
     appointment = db.query(Appointment).filter(Appointment.id == appointment_id).first()
     if not appointment:
@@ -128,6 +130,7 @@ def update_appointment_status(db: Session, appointment_id: int, new_status: Appo
     return appointment
 
 
+# get the reminder status for the appointment
 def get_appointments_for_reminder(db: Session):
     today = date.today()
     tomorrow = today + timedelta(days=1)

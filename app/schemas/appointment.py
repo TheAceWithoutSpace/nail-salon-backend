@@ -44,10 +44,9 @@ class AppointmentOut(BaseModel):
 class AppointmentUpdate(BaseModel):
     service: Optional[str] = None  # Optional for updates
     appointment_time: Optional[datetime] = None  # Optional, can be updated
-    status: AppointmentStatus  # Optional, for updating the status
     worker_id: Optional[int] = None  # Optional, for updating the assigned worker
     user_request: Optional[str] = None  # Optional, user request field
-
+    status: Optional[AppointmentStatus] = None
     model_config = ConfigDict(from_attributes=True)
 
 

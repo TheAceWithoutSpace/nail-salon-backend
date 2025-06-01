@@ -1,6 +1,7 @@
 import enum
 
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Enum, Boolean
+from sqlalchemy.dialects.postgresql import ENUM
 from sqlalchemy.orm import relationship
 from app.database import Base
 from datetime import datetime
@@ -23,7 +24,7 @@ class Appointment(Base):
     user_request = Column(String)  # User request field
     user_id = Column(Integer, ForeignKey("users.id"))  # Linking to users table
     status = Column(Enum(AppointmentStatus, name="appointment_status"), default=AppointmentStatus.BOOKED,
-                    nullable=False)
+                    nullable=False,)
     reminder_sent = Column(Boolean, default=False)
 
     worker = relationship("Worker", back_populates="appointments")  # Assuming you have a Worker model
