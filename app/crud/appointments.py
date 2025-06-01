@@ -3,7 +3,7 @@ from typing import List
 
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
-from sqlalchemy import or_
+from sqlalchemy import case
 from app import models, schemas
 from datetime import date, time, datetime, timedelta
 
@@ -48,14 +48,15 @@ def get_appointments_by_date_and_worker(db: Session, appointment_date: date, wor
         models.Appointment.appointment_time <= end_dt,
         models.Appointment.worker_id == worker_id
     ).order_by(
-        # Status order: BOOKED → others → NO_SHOW → DONE (you can adjust this priority)
-        db.case(
-            (Appointment.status == AppointmentStatus.BOOKED, 0),
-            (Appointment.status == AppointmentStatus.NO_SHOW, 2),
-            (Appointment.status == AppointmentStatus.DONE, 3),
+        case(
+            [
+                (models.Appointment.status == AppointmentStatus.BOOKED, 0),
+                (models.Appointment.status == AppointmentStatus.NO_SHOW, 2),
+                (models.Appointment.status == AppointmentStatus.DONE, 3)
+            ],
             else_=1
         ),
-        Appointment.start_time
+        models.Appointment.start_time
     ).all()
 
 
