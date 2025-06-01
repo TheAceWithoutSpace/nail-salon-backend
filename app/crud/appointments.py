@@ -47,6 +47,15 @@ def get_appointments_by_date_and_worker(db: Session, appointment_date: date, wor
         models.Appointment.appointment_time >= start_dt,
         models.Appointment.appointment_time <= end_dt,
         models.Appointment.worker_id == worker_id
+    ).order_by(
+        # Status order: BOOKED → others → NO_SHOW → DONE (you can adjust this priority)
+        db.case(
+            (Appointment.status == AppointmentStatus.BOOKED, 0),
+            (Appointment.status == AppointmentStatus.NO_SHOW, 2),
+            (Appointment.status == AppointmentStatus.DONE, 3),
+            else_=1
+        ),
+        Appointment.start_time
     ).all()
 
 

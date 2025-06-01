@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4b66728-f533-4cac-9890-08795fa72245" name="Changes" comment="fixed the test to work with the new enum">
+    <list default="true" id="f4b66728-f533-4cac-9890-08795fa72245" name="Changes" comment="fixed the appointments tests , added validation for the db_create, fixed the tests cases and added cases for the change-status">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/crud/appointments.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/appointments.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/appointment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/appointment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/appointment.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/appointment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_appointmetns.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_appointmetns.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +172,7 @@
       <workItem from="1746972593730" duration="404000" />
       <workItem from="1747150368724" duration="21135000" />
       <workItem from="1747561840198" duration="29487000" />
-      <workItem from="1748686574709" duration="14612000" />
+      <workItem from="1748686574709" duration="15908000" />
     </task>
     <task id="LOCAL‎-00001" summary="start-project">
       <option name="closed" value="true" />
@@ -482,7 +478,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1748718198359</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL‎-00039" summary="fixed the appointments tests , added validation for the db_create, fixed the tests cases and added cases for the change-status">
+      <option name="closed" value="true" />
+      <created>1748781428395</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL‎-00039" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748781428395</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,7 +504,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added routes as for v1 of the backend , created tests for the route added connection to the sql-db , added comments and added test.yml file for dynamic test . this is the v1 stable version were all tests have passed in the test env" />
     <MESSAGE value="fixed action to run from master" />
     <MESSAGE value="fixed table bug when test starts the tables in the test_db isn't initialised" />
     <MESSAGE value="added whatsup support , fixed the JWT auth , added appointments by user" />
@@ -525,12 +528,13 @@
     <MESSAGE value="added appointemnt routes for change appointment status , added appointment status enum , added scheduler that runs every 1 hour ,added scheduled task , send reminder for users that there appointments is near fixed bugs in appointments" />
     <MESSAGE value="fixed message template spaces for clear worker name and customer name" />
     <MESSAGE value="fixed the test to work with the new enum" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed the test to work with the new enum" />
+    <MESSAGE value="fixed the appointments tests , added validation for the db_create, fixed the tests cases and added cases for the change-status" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed the appointments tests , added validation for the db_create, fixed the tests cases and added cases for the change-status" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/nail_salon$sms.coverage" NAME="sms Coverage Results" MODIFIED="1747821569311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/utils" />
     <SUITE FILE_PATH="coverage/nail_salon$auth.coverage" NAME="auth Coverage Results" MODIFIED="1747024688390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/routers" />
-    <SUITE FILE_PATH="coverage/nail_salon$.coverage" NAME=" Coverage Results" MODIFIED="1748781185650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/nail_salon$.coverage" NAME=" Coverage Results" MODIFIED="1748781309279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/nail_salon$main.coverage" NAME="main Coverage Results" MODIFIED="1747024694593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
   </component>
 </project>
