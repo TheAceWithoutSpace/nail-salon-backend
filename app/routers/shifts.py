@@ -3,8 +3,8 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 from datetime import date
 from app.database import get_db
-from app import crud, schemas
-from app.utils.jwt_auth import get_worker_id_from_token
+from app import crud, schemas, models
+from app.utils.jwt_auth import get_worker_id_from_token, get_current_user
 
 router = APIRouter(prefix="/shifts", tags=["Shifts"])
 
@@ -138,3 +138,11 @@ def get_shifts_by_worker(worker_id: int = Depends(get_worker_id_from_token), db:
     if not shifts:
         raise HTTPException(status_code=404, detail="No shifts found for this worker")
     return shifts
+
+
+@router.get("/worker/shifts_summary")
+def get_worker_shifts_summary(
+        db: Session = Depends(get_db),
+        current_user: models.User = Depends(get_current_user)
+):
+    return crud.shift_summary.get_worker_shift_summary(db, current_user.id)
